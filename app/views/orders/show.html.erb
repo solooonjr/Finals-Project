@@ -16,8 +16,8 @@
 </p>
 
 <p>
-  <strong>Inventory:</strong>
-  <%= @order.inventory_id %>
+  <strong>Total:</strong>
+  <%= @order.quantity * @order.inventory.price %>
 </p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
