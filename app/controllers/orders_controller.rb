@@ -1,13 +1,17 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
+  def find
+    @orders = Order.where("LOWER(customer_name) LIKE ?", "%" + params[:search_string].to_s.downcase + "%")
+    
+  end
+
   # GET /orders
   # GET /orders.json
   def index
     @orders = Order.all
  
   end
-
   # GET /orders/1
   # GET /orders/1.json
   def show
@@ -70,6 +74,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:customer_name, :product, :quantity, :inventory_id, inventory_attributes: [:id, :product_name, :in_stock, :committed, :ordered, :available, :price])
+      params.require(:order).permit(:customer_name, :product, :quantity, :inventory_id, :search_string)
     end
 end

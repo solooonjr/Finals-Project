@@ -7,7 +7,7 @@
 
 <p>
   <strong>Product:</strong>
-  <%= @order.product %>
+  <%= @order.inventory.product_name %>
 </p>
 
 <p>
@@ -21,4 +21,5 @@
 </p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Order Aain', new_order_path %> |
 <%= link_to 'Back', orders_path %>

@@ -1,4 +1,4 @@
-<%= simple_form_with(model: order, local: true) do |form| %>
+<%= form_with(model: order, local: true) do |form| %>
   <% if order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
@@ -18,13 +18,9 @@
   
     <p>
     <%= form.label :product %>
-
-    <%=form.input :order, collection: @orders, priority: @order.inventory.product_name%>
-
-    <!--
-    <%= form.collection_select(:order, :inventory_id, Inventory.all, :id, :product_name, :prompt=>'SELECT') %>    
+    <%= form.collection_select(:inventory_id, Inventory.all, :id, :product_name, :prompt=>'Choose....') %>    
     </p>
-    <-->
+
     <p>
     <%= form.label :quantity %>
     <%= form.number_field :quantity %>

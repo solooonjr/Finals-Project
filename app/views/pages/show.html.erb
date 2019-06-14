@@ -1,0 +1,26 @@
+<div class="card mx-auto mt-4" style="width: 20rem;">
+      <div class="card-header bg-secondary text-light">Login Form</div>
+      
+      <div class="card-body">
+            <%= form_tag "/login" do %>
+                  <div class="form-group">
+                        <label for="exampleInputEmail1">Username:</label>  
+                        <%= text_field_tag :username, "username", class: "form-control", placeholer: "username" %>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+  
+                  <div class="form-group">
+                        <label for="exampleInputPassword1">Password:</label>
+                        <%= password_field_tag :password, "password", class: "form-control", placeholer: "password" %>
+                  </div>
+  
+      <%=submit_tag :login, class: "btn btn-primary" %>
+ 
+
+<% end %>
+      
+      
+      
+      
+      </div>
+</div>

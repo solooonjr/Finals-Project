@@ -1,8 +1,7 @@
+<%= render "shared/jumbotron", header: "Inventory", tag_line:"", alignment: "text-center" %>
 <p id="notice"><%= notice %></p>
 
-<h1>Inventories</h1>
-
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Product name</th>
@@ -27,7 +26,7 @@
             <% if inventory.in_stock.to_i - inventory.committed.to_i + inventory.ordered.to_i != 0 then %>
               <%= inventory.in_stock.to_i - inventory.committed.to_i + inventory.ordered.to_i%>  
             <% else %>
-               <%= "No more stock" %>
+              <%= "No more stock" %>
             <% end %>  
         </td>
         <td><%= link_to 'Show', inventory %></td>

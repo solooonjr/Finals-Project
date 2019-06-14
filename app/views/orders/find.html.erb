@@ -1,7 +1,8 @@
-<%= render "shared/jumbotron", header: "Orders", tag_line: "Order Now...", alignment: "text-center" %>
 <p id="notice"><%= notice %></p>
 
-<table class="table table-hover">
+<h1>Orders</h1>
+
+<table>
   <thead>
     <tr>
       <th>Customer Name</th>
@@ -27,8 +28,13 @@
   </tbody>
 </table>
 
+<div>
+    <h3> Overall: </h3>
+    
+</div>
+
 <br>
 
-
-<%= link_to 'New Order', new_order_path %>
+<br>
+<%= link_to 'New Order', new_order_path %> | <%= link_to 'Back to List', orders_path%>
 
