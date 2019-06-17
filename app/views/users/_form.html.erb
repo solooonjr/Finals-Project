@@ -1,4 +1,8 @@
-<%= form_with(model: user, local: true) do |form| %>
+<div class="card mx-auto mt-4" style="width: 20rem;">
+      <div class="card-header bg-secondary text-light">Login Form</div>
+
+  <div class="card-body"> 
+  <%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -10,7 +14,7 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
     <%= form.label :username %>
     <%= form.text_field :username %>
@@ -30,3 +34,7 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+
+</div>
+</div>

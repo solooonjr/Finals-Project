@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_login
+  
   def find
     @orders = Order.where("LOWER(customer_name) LIKE ?", "%" + params[:search_string].to_s.downcase + "%")
     
@@ -74,6 +75,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:customer_name, :product, :quantity, :inventory_id, :search_string)
+      params.require(:order).permit(:customer_name, :quantity, :inventory_id)
     end
 end

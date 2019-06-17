@@ -20,6 +20,6 @@
   <%= @order.quantity * @order.inventory.price %>
 </p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Order Aain', new_order_path %> |
-<%= link_to 'Back', orders_path %>
+<%= button_to 'Edit', edit_order_path(@order) %><br> <%= button_to 'Order Aain', new_order_path %> 
+<br>
+<%= button_to 'Back', orders_path %>

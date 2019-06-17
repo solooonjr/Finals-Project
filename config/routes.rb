@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post "login", to: "pages#new_login"
   get "logout", to: "pages#logout"
 
+  post "orders/:id/edit", to:  "orders#edit"
   post "orders/:id", to: "orders#find"
 
   resources :orders
